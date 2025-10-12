@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <h2>Détails de la Dépense</h2>
+    <div *ngIf="depense; else loading">
+      <p><strong>Description :</strong> {{ depense.description  }}</p>
+      <p><strong>Montant :</strong> {{ depense.amount}} €</p>
+      <p><strong>Date :</strong> {{ depense.date }}</p>
+    </div>
+    <ng-template #loading>
+      <p>Chargement...</p>
+    </ng-template>
+</div>

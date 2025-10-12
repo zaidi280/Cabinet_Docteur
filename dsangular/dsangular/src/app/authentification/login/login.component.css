@@ -1,0 +1,79 @@
+/* Login Container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f6f9;
+  gap: 100px; /* Reduce space between form and image */
+}
+
+.login-image img {
+  max-width: 100%;
+  width: 400px; /* Increase image size */
+}
+
+/* Form Container */
+.login-form {
+  flex: 1;
+  max-width: 400px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  color: #1976d2;
+}
+
+
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+    gap: 20px; /* Reduce space between elements */
+  }
+
+  .login-image {
+    order: -1;
+    width: 90%;
+  }
+
+  .login-form {
+    width: 90%;
+  }
+  .error-snackbar {
+    background-color: #d32f2f; /* Red color */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+}

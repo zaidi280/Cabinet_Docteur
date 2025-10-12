@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="my-4">Modifier la Date du Rendez-vous</h2>
+    <form [formGroup]="rendezVousForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="date_time" class="form-label">Date et Heure</label>
+        <input
+          type="datetime-local"
+          class="form-control"
+          id="date_time"
+          formControlName="date_time"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="montant" class="form-label">Montant</label>
+        <input
+          type="number"
+          class="form-control"
+          id="montant"
+          formControlName="montant"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-warning" [disabled]="rendezVousForm.invalid">Modifier</button>
+    </form>
+  </div>

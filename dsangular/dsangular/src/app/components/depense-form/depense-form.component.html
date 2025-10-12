@@ -1,0 +1,29 @@
+<p class="form-title">Dépense Form</p>
+
+<form [formGroup]="depenseForm" (ngSubmit)="onSubmit()" class="form-container">
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Description</mat-label>
+    <mat-icon matPrefix>description</mat-icon>
+    <input matInput placeholder="Entrez la description" formControlName="description" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Montant (€)</mat-label>
+    <mat-icon matPrefix>euro</mat-icon>
+    <input matInput type="number" placeholder="Entrez le montant" formControlName="amount" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Date</mat-label>
+    <mat-icon matPrefix>event</mat-icon>
+    <input matInput type="date" formControlName="date" />
+  </mat-form-field>
+
+  <br>
+
+  <button type="submit" mat-raised-button color="warn" class="submit-button">
+    <mat-icon>send</mat-icon> Soumettre
+  </button>
+
+</form>

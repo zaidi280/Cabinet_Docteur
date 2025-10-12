@@ -1,0 +1,59 @@
+
+<div class="container mt-5">
+  <h2 class="my-4 text-center">Ajouter un Rendez-vous</h2>
+  <!-- Afficher les erreurs s'il y en a -->
+  <div *ngIf="error" class="alert alert-danger">
+    {{ error }}
+  </div>
+  <!-- Afficher un message de chargement pendant la récupération des patients -->
+  <div *ngIf="loading" class="alert alert-info">
+    Chargement des patients...
+  </div>
+  <!-- Formulaire de rendez-vous -->
+  <form [formGroup]="rendezvousForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="patient_id" class="form-label">Patient</label>
+      <select
+        id="patient_id"
+        class="form-select"
+        formControlName="patient_id"
+        required
+      >
+        <option value="">Sélectionner un patient</option>
+        <option *ngFor="let patient of patients" [value]="patient.id">
+          {{ patient.nom }} {{ patient.prenom }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mb-4">
+      <label for="date_time" class="form-label">Date et Heure</label>
+      <input
+        type="datetime-local"
+        id="date_time"
+        class="form-control"
+        formControlName="date_time"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="montant" class="form-label">Montant</label>
+      <input
+        type="text"
+        id="montant"
+        class="form-control"
+        formControlName="montant"
+        required
+      />
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary w-100"
+      [disabled]="rendezvousForm.invalid"
+    >
+      Ajouter
+    </button>
+  </form>
+</div>

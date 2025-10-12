@@ -1,0 +1,96 @@
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+}
+
+app-sidebar {
+  width: 250px;
+}
+
+.dashboard-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+  background: #f4f7fc;
+  border-radius: 12px;
+}
+
+/* Barre de recherche */
+.search-bar {
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+/* Bouton d'ajout */
+.add-button {
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  margin-bottom: 15px;
+  width: fit-content;
+}
+
+/* Table Styling */
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table thead {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  text-align: left;
+}
+
+.table th {
+  padding: 12px;
+}
+
+.table td {
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.pagination .page-link {
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #007bff;
+}
+
+.pagination .page-item.active .page-link {
+  background: #007bff;
+  color: white;
+}
+/* filepath: /C:/Users/LENOVO/Desktop/Angular/dsangular/dsangular/src/app/components/patient/patient.component.css */
+.snack-bar-success {
+  background-color: #4caf50; /* Green */
+  color: white;
+}
+
+.snack-bar-error {
+  background-color: #f44336; /* Red */
+  color: white;
+}

@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidebar">
+    <div class="sidebar-header">
+      <h2>Docteur {{ userName }}</h2>
+    </div>
+    <mat-nav-list>
+      <a *ngIf="authService.isAdmin()" mat-list-item routerLink="/dashboard">
+        <mat-icon>dashboard</mat-icon> Dashboard
+      </a>
+      <a mat-list-item routerLink="/maladies">
+        <mat-icon>local_hospital</mat-icon> Maladies
+      </a>
+      <a mat-list-item routerLink="/patients">
+        <mat-icon>person</mat-icon> Patients
+      </a>
+      <a mat-list-item routerLink="/depenses">
+        <mat-icon>attach_money</mat-icon> Dépenses
+      </a>
+      <a mat-list-item routerLink="/rendezvous">
+        <mat-icon>event</mat-icon> Rendez-Vous
+      </a>
+      <a mat-list-item routerLink="/revenues">
+        <mat-icon>trending_up</mat-icon> Revenues
+      </a>
+      <a mat-list-item routerLink="/register">
+        <mat-icon>person_add</mat-icon> Ajouter Sécretaire
+      </a>
+
+      <a mat-list-item routerLink="/calender">
+        <mat-icon>calendar_today</mat-icon> Calendrier
+      </a>
+
+
+
+      <a mat-list-item routerLink="/logout">
+        <mat-icon>exit_to_app</mat-icon> Logout
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+</mat-sidenav-container>

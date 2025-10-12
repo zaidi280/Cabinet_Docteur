@@ -1,0 +1,79 @@
+
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content -->
+  <div class="dashboard-container">
+    <mat-toolbar color="primary" *ngIf="isAdmin">
+      <span>Tableau de bord - Administration</span>
+    </mat-toolbar>
+    <br>
+
+    <div class="dashboard-content">
+
+      <!-- Stats Cards -->
+      <div class="stats">
+        <div class="stat-card">
+          <h2>Total des Revenus</h2>
+          <p>{{ stats.value.totalIncome }} €</p>
+        </div>
+        <div class="stat-card">
+          <h2>Total des Dépenses</h2>
+          <p>{{ stats.value.totalDepenses }} €</p>
+        </div>
+
+        <!-- Total Benefice Card -->
+        <div class="stat-card">
+          <h2>Total du Bénéfice</h2>
+          <p>{{ beneficeData.value.totalBenefice }} €</p>
+        </div>
+
+   
+      </div>
+
+      <!-- Monthly Report -->
+      <div class="monthly-report">
+        <h2>Rapport Mensuel - {{ monthlyData.value.month }}</h2>
+
+        <div class="stats">
+          
+          <div class="stat-card">
+            <h3>Revenus</h3>
+            <p>{{ monthlyData.value.revenues }} €</p>
+          </div>
+          <div class="stat-card">
+            <h3>Dépenses</h3>
+            <p>{{ monthlyData.value.depenses }} €</p>
+          </div>
+
+     <!-- Monthly Benefice Card -->
+     <div class="stat-card">
+      <h3>Bénéfice Mensuel</h3>
+      <p>{{ beneficeData.value.monthlyBenefice }} €</p>
+    </div>
+
+        </div>
+
+        <!-- Month Selector -->
+        <mat-form-field class="month-selector">
+          <mat-label>Sélectionner un mois</mat-label>
+          <mat-select (selectionChange)="fetchMonthlyData($event.value)">
+            <mat-option *ngFor="let month of months" [value]="month">
+              {{ month }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
+
+        
+        <!-- Chart Display -->
+        <div class="chart-container">
+          <canvas #chart></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

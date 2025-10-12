@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="my-4">Détails de la Maladie</h2>
+  
+    <div *ngIf="maladie" class="card mt-4">
+      <div class="card-body">
+        <p><strong>Nom de la Maladie:</strong> {{ maladie.nom_maladie }}</p>
+        <p><strong>Patient:</strong> {{ maladie.patient.nom }} {{ maladie.patient.prenom }}</p>
+        <p><strong>Médicament:</strong> {{ maladie.medicament }}</p>
+        <p><strong>Dosage:</strong> {{ maladie.dosage }}</p>
+        <p><strong>Description:</strong> {{ maladie.description }}</p>
+  
+        <a routerLink="/maladies" class="btn btn-primary">Retour à la liste</a>
+        <!-- Bouton de téléchargement PDF -->
+<button class="btn btn-success mb-3" (click)="downloadPDF()">Télécharger en PDF</button>
+
+      </div>
+    </div>
+  </div>

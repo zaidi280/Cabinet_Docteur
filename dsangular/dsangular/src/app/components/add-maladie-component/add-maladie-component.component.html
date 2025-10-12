@@ -1,0 +1,40 @@
+<div class="container">
+    <h2 class="my-4">Ajouter une Maladie</h2>
+  
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+    <div *ngIf="loading">Chargement des patients...</div>
+  
+    <form *ngIf="!loading" [formGroup]="maladieForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="patient_id" class="form-label">Patient</label>
+        <select class="form-control" id="patient_id" formControlName="patient_id" required>
+          <option value="">Sélectionner un patient</option>
+          <option *ngFor="let patient of patients" [value]="patient.id">
+            {{ patient.nom }} {{ patient.prenom }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="mb-3">
+        <label for="nom_maladie" class="form-label">Nom de la Maladie</label>
+        <input type="text" class="form-control" id="nom_maladie" formControlName="nom_maladie" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" formControlName="description" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="medicament" class="form-label">Médicament</label>
+        <textarea class="form-control" id="medicament" formControlName="medicament" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="dosage" class="form-label">Dosage</label>
+        <textarea class="form-control" id="dosage" formControlName="dosage" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+  </div>

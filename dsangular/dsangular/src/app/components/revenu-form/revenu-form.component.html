@@ -1,0 +1,28 @@
+<p class="form-title">Revenu Form</p>
+
+<form [formGroup]="revenuForm" (ngSubmit)="onSubmit()" class="form-container">
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Description</mat-label>
+    <mat-icon matPrefix>description</mat-icon>
+    <input matInput placeholder="Entrez la description" formControlName="descriptionrev" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Montant (€)</mat-label>
+    <mat-icon matPrefix>euro</mat-icon>
+    <input matInput type="number" placeholder="Entrez le montant" formControlName="amountrev" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Date</mat-label>
+    <mat-icon matPrefix>event</mat-icon>
+    <input matInput type="date" formControlName="daterev" />
+  </mat-form-field>
+
+  <br>
+
+  <button type="submit" mat-raised-button color="primary" class="submit-button">
+    <mat-icon>send</mat-icon> Soumettre
+  </button>
+</form>

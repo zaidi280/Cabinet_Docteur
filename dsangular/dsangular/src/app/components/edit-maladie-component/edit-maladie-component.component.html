@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 class="my-4">Modifier la Maladie</h2>
+  
+    <form [formGroup]="maladieForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nom_maladie" class="form-label">Nom de la Maladie</label>
+        <input type="text" class="form-control" id="nom_maladie" formControlName="nom_maladie" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea class="form-control" id="description" formControlName="description" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="medicament" class="form-label">Médicament</label>
+        <textarea class="form-control" id="medicament" formControlName="medicament" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="dosage" class="form-label">Dosage</label>
+        <textarea class="form-control" id="dosage" formControlName="dosage" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-warning">Modifier</button>
+    </form>
+  </div>

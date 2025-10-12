@@ -1,0 +1,63 @@
+/* Container for the whole layout */
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar Styling */
+app-sidebar {
+  width: 250px;
+}
+
+/* Main container for the dashboard content */
+.dashboard-container {
+  flex-grow: 1;
+  padding: 20px;
+  overflow: auto;
+  background: #f4f7fc;
+}
+
+/* Styling for the table */
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table.table th, table.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table.table th {
+  background-color: #6371be;
+  color: white;
+}
+
+table.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button Styling */
+button.mat-icon-button {
+  border-radius: 50%;
+}
+
+/* Pagination */
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.pagination .page-link {
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #007bff;
+}
+
+.pagination .page-item.active .page-link {
+  background: #007bff;
+  color: white;
+}

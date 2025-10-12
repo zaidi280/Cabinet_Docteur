@@ -1,0 +1,41 @@
+
+<p class="form-title">Patient Form</p>
+
+<form [formGroup]="patientForm" (ngSubmit)="onSubmit()" class="form-container">
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nom</mat-label>
+    <mat-icon matPrefix>person</mat-icon>
+    <input matInput placeholder="Entrez le nom" formControlName="nom" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Prénom</mat-label>
+    <mat-icon matPrefix>person</mat-icon>
+    <input matInput placeholder="Entrez le prénom" formControlName="prenom" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Date de Naissance</mat-label>
+    <mat-icon matPrefix>event</mat-icon>
+    <input matInput type="date" formControlName="date_naissance" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Adresse</mat-label>
+    <mat-icon matPrefix>home</mat-icon>
+    <input matInput placeholder="Entrez l'adresse" formControlName="adresse" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Téléphone</mat-label>
+    <mat-icon matPrefix>call</mat-icon>
+    <input matInput type="tel" placeholder="Entrez le numéro" formControlName="telephone" />
+  </mat-form-field>
+
+  <br>
+
+  <button type="submit" mat-raised-button color="primary" class="submit-button">
+    <mat-icon>send</mat-icon> Soumettre
+  </button>
+</form>
